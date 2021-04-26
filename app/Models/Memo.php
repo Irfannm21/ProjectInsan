@@ -9,4 +9,12 @@ class Memo extends Model
 {
     use HasFactory;
     protected $fillable = ["nomor","tanggal","dari","kepada","perihal","content"];
+
+
+    public function Divisi()
+    {
+        return $this->belongsTo('App\Models\Divisi');
+    }
+
+
 }

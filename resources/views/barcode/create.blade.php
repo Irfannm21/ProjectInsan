@@ -5,7 +5,7 @@
 <div class="card-body">
 
 <div class="pt-3 d-flex align-items-center">
-  <h1 class="h2 mr-2">Data Memo Engineering</h1>
+  <h1 class="h2 mr-2">Tambah Po Baru</h1>
      
 </div>
 <hr>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BarcodeController;
 use App\Http\Controllers\MemoController;
-
+use Carbon\Carbon;
 
 
 use Faker\Factory as Faker;
@@ -21,6 +21,7 @@ use Faker\Factory as Faker;
 Route::get('/', function () {
     return view('layouts.app');
 });
+
 
 Route::resource('barcodes',BarcodeController::class);
 Route::resource('memos',MemoController::class);

@@ -7,8 +7,12 @@
 <script>
     tinymce.init({
       selector: '#mytextarea',
-      plugins: 'print preview searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help  charmap   quickbars  emoticons ',
-      toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | bullist numlist | link image | code | print'
+      plugins: 'autoresize print preview searchreplace autolink autosave save directionality visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help  charmap   quickbars  emoticons ',
+      toolbar: 'undo redo | styleselect | forecolor | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | bullist numlist | link image | code | print',
+      skin : 'snow',
+      icons : 'thin',
+      placeholder : ' texttttttttt',
+
     });
   </script>
 </body>

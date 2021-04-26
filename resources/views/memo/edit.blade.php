@@ -9,7 +9,7 @@
      
 </div>
 <hr>
-<form action="{{route('memos.update',['memo' => $memo->id])    }}" method="post">
+<form action="{{route('memos.update',['memo' => $memo->id])}}" method="post">
     @method('PATCH')
     @include('memo.form',['tombol' => 'Update'])
 </form>

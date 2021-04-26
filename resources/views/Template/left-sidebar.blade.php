@@ -16,13 +16,17 @@
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
           <img src="img/user.png" class="img-circle elevation-2" alt="UserImage">
-          <p>Irfan Nur Muhammad</p>
+          <p> {{ Auth::user()->name }}</p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('barcodes.index')}}" class="nav-link">
-                <i class="fas fa-sign-out-alt"></i>
-                  <p>Keluar</p>
+                <a href="{{ route('logout') }}" class="nav-link"  onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                <i class="fas fa-sign-out-alt">Keluar</i>
+                <form id="logout-form" action="{{ route('logout') }}"
+                method="POST" style="display: none;">
+                @csrf
+              </form>
                 </a>
               </li>
             </ul>

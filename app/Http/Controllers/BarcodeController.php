@@ -63,7 +63,6 @@ class BarcodeController extends Controller
             'batch' => 'required',
         ]); 
 
-
         $barcode = Barcode::create($validateData);
         Alert::success('Berhasil',"PO number $request->gg_po berhasil dibuat");
         return redirect('/barcodes');

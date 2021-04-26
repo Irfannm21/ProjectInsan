@@ -1,5 +1,5 @@
 @csrf
-<br>
+
 <div class="form-group row">
   <label for="nomor" class="col-md-3 col-form-label text-md-right"
   title="gg_po">
@@ -18,35 +18,45 @@
 </div>
 
 <div class="form-group row">
-  <label for="dari" class="col-md-3 col-form-label text-md-right"
-  title="gg_po">
-    Dari  </label>
+  <label for="dari" class="col-md-3 col-form-label text-md-right">
+    Dari </label>
   <div class="col-md-6">
-    <input id="dari" type="text"
-    class="form-control col-md-8 @error('dari') is-invalid @enderror"
-    name="dari" value="{{ old('dari') ?? $memo->dari ?? '' }}" autofocus
-    placeholder="">
+    <select name="dari" id="dari"
+    class="custom-select col-md-5 @error('dari') is-invalid @enderror">
+    @foreach ($divisis as $divisi)
+      @if ($divisi->id == (old('dari') ?? $memo->dari ?? ''))
+      <option value="{{ $divisi->id }}" selected>{{ $divisi->nama }}</option>
+      @else
+      <option value="{{ $divisi->id }}">{{ $divisi->nama }}</option>
+      @endif
+    @endforeach
+    </select>
     @error('dari')
-      <span class="invalid-feedback" role="alert">
+    <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
-      </span>
+    </span>
     @enderror
   </div>
 </div>
 
 <div class="form-group row">
-  <label for="kepada" class="col-md-3 col-form-label text-md-right"
-  title="gg_po">
-    Kepada  </label>
+  <label for="kepada" class="col-md-3 col-form-label text-md-right">
+    kepada </label>
   <div class="col-md-6">
-    <input id="kepada" type="text"
-    class="form-control col-md-8 @error('kepada') is-invalid @enderror"
-    name="kepada" value="{{ old('kepada') ?? $memo->kepada ?? '' }}" autofocus
-    placeholder="">
+    <select name="kepada" id="kepada"
+    class="custom-select col-md-5 @error('kepada') is-invalid @enderror">
+    @foreach ($divisis as $divisi)
+      @if ($divisi->id == (old('kepada') ?? $memo->kepada ?? ''))
+      <option value="{{ $divisi->id }}" selected>{{ $divisi->nama }}</option>
+      @else
+      <option value="{{ $divisi->id }}">{{ $divisi->nama }}</option>
+      @endif
+    @endforeach
+    </select>
     @error('kepada')
-      <span class="invalid-feedback" role="alert">
+    <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
-      </span>
+    </span>
     @enderror
   </div>
 </div>
@@ -89,8 +99,7 @@
     <textarea id="mytextarea"
     class="@error('content') is-invalid @enderror"
     name="content"> 
-    
-
+  
     {{ old('content') ?? $memo->content ?? '' }}</textarea>
     @error('content')
       <span class="invalid-feedback" role="alert">

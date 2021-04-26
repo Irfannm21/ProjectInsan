@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Memo;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\Divisi;
 use PDF;
 use Dompdf\Dompdf;
 use Dompdf\Options;
+use App\Models\MemoMasuk;
+use Illuminate\Support\Facades\DB;
 
 class MemoController extends Controller
 {
@@ -29,7 +32,8 @@ class MemoController extends Controller
      */
     public function create()
     {
-        return view ('memo.create');
+        $divisis = Divisi::orderBy('id')->get();
+        return view('memo.create',compact('divisis'));
     }
 
     /**
@@ -40,17 +44,31 @@ class MemoController extends Controller
      */
     public function store(Request $request)
     {
+        
         $validateData = $request->validate([
             'nomor'   => 'required',
             'tanggal' => 'required',
-            'dari'    => 'required',
+            'dari'    => 'required | exists:App\Models\Divisi,id',
             'kepada'  => 'required',
             'perihal' => 'required',
             'content' => 'required',
         ]);
-        $memo = Memo::create($validateData);
-        Alert::success('Berhasil', "Memo $request->nomor berhasil dibuat" );
-        return redirect('/memos');
+
+        DB::beginTransaction();
+
+        try{
+
+            $memos = Memo::create($validateData);
+            $memoMasuk = new MemoMasuk();
+            $memoMasuk->user_id = "2";
+            $memoMasuk->memo_id = "103/ED/XI/2021";
+            $memoMasuk->save();
+            
+            DB::commit();
+        } catch (\Exception $e) {
+           DB::rollback();
+            return redirect('/memos');
+        }
     }
 
     /**
@@ -72,8 +90,11 @@ class MemoController extends Controller
      */
     public function edit(Memo $memo)
     {
-        $memos = Memo::orderBy('id')->get();
-        return view('memo.edit',['memo' => $memo]);
+        $divisis = Divisi::orderBy('nama')->get();
+        return view('memo.edit',[
+            'memo' => $memo,
+            'divisis' => $divisis,
+         ]);
     }
 
     /**
