@@ -25,10 +25,13 @@ Route::get('/', function () {
 
 Route::resource('barcodes',BarcodeController::class);
 Route::resource('memos',MemoController::class);
+Route::resource('masuks',MemoMasukController::class);
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::get('/print/{barcode}',[BarcodeController::class,"print"])->name('print');
 Route::get('/cetak/{memo}',[MemoController::class,"cetak"])->name('cetak');

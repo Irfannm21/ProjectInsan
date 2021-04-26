@@ -44,27 +44,31 @@ class MemoController extends Controller
      */
     public function store(Request $request)
     {
-        
-        $validateData = $request->validate([
-            'nomor'   => 'required',
-            'tanggal' => 'required',
-            'dari'    => 'required | exists:App\Models\Divisi,id',
-            'kepada'  => 'required',
-            'perihal' => 'required',
-            'content' => 'required',
-        ]);
 
         DB::beginTransaction();
 
         try{
-
+            $validateData = $request->validate([
+                'nomor'   => 'required',
+                'tanggal' => 'required',
+                'dari'    => 'required | exists:App\Models\Divisi,id',
+                'kepada'  => 'required',
+                'perihal' => 'required',
+                'content' => 'required',
+            ]);
+    
+            
             $memos = Memo::create($validateData);
+
             $memoMasuk = new MemoMasuk();
-            $memoMasuk->user_id = "2";
-            $memoMasuk->memo_id = "103/ED/XI/2021";
+            $memoMasuk->memo_id = $request->nomor;
+            $memoMasuk->content = $request->content;
             $memoMasuk->save();
             
             DB::commit();
+
+            Alert::success("Berhasil','Memo dengan nomor $request->nomor berhasil ditambahkan");
+            return redirect('/memos');
         } catch (\Exception $e) {
            DB::rollback();
             return redirect('/memos');

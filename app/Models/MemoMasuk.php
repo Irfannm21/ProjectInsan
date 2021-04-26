@@ -9,5 +9,5 @@ class MemoMasuk extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['memo_id','content'];
+    protected $fillable = ["memo_id","content"];
 }

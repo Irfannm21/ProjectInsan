@@ -75,6 +75,12 @@
                   <p>Buat Memo</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('masuks.index')}}" class="nav-link">
+                  <i class="fas fa-envelope nav-icon"></i>
+                  <p>Buat Memo</p>
+                </a>
+              </li>
           </li>
         </ul>
       </nav>

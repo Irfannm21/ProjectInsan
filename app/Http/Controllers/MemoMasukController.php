@@ -14,7 +14,7 @@ class MemoMasukController extends Controller
      */
     public function index()
     {
-        //
+        return view('masuk.table');
     }
 
     /**
