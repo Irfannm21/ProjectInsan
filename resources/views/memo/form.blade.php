@@ -21,6 +21,7 @@
   <label for="dari" class="col-md-3 col-form-label text-md-right">
     Dari </label>
   <div class="col-md-6">
+
     <select name="dari" id="dari"
     class="custom-select col-md-5 @error('dari') is-invalid @enderror">
     @foreach ($divisis as $divisi)
@@ -99,7 +100,10 @@
     <textarea id="mytextarea"
     class="@error('content') is-invalid @enderror"
     name="content"> 
-  
+    <div class="container">
+
+
+
     {{ old('content') ?? $memo->content ?? '' }}</textarea>
     @error('content')
       <span class="invalid-feedback" role="alert">

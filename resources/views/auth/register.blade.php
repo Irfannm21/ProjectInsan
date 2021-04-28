@@ -1,4 +1,5 @@
-@extends('home')
+@extends('layouts.app')
+
 @section('content')
 <section class="content">
 <div class="card">
@@ -9,10 +10,10 @@
      
 </div>
 <hr>
-<!-- /.card-header -->
-              <!-- form start -->
-              <form role="form" id="quickForm" method="POST" action="{{route('register')}}">
+
+         <form role="form" id="quickForm" method="POST" action="{{route('register')}}">
               @include('auth.form',['tombol' => 'Tambah'])
-              </form>
+         </form>
+
 </section>
 @endsection

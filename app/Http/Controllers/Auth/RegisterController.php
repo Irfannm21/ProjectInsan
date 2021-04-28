@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use APp\Models\NamaDepartement;
+use App\Models\Divisi;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -50,7 +50,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        
+        return Validator::make($data, [
+            'name' => ['required', 'string', 'max:255'],
+            'divisi_id' => 'kd01',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'role' => ['required', 'string', 'max:255'],
+            'divisi_id' => ['required', 'string', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
     }
 
     /**
@@ -59,23 +66,15 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    public function create()
-    {
-      return view('jurusan.create');
-    }
-
-    public function store(Request $request)
-    {
-        $validateData = $request->validate([
-            'name' => 'required'| 'string',
-            'role' => 'required'| 'string',
-            'departement' => 'required'| 'string',
-            'email' => 'required'| 'string'| 'email'| 'unique:users',
-            'password' => 'required'| 'string'| 'min:8'| 'confirmed',
+    protected function create(array $data)
+    {       
+       return User::create([
+            'name' => $data['name'],
+            'divisi_id' => 'kd01',
+            'email' => $data['email'],
+            'role' => $data['role'],
+            'divisi_id' => $data['divisi_id'],
+            'password' => Hash::make($data['password']),
         ]);
-        $users = User::Create($validateData);
-        Alert::success('Berhasil','Jurusan $request->nama berhasil dibuat');
-        return redirect('index');
     }
 }
- 

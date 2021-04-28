@@ -15,7 +15,7 @@ class CreateMemosTable extends Migration
     {
         Schema::create('memos', function (Blueprint $table) {
             $table->id();
-            $table->string('nomor');
+            $table->string('nomor')->unique();
             $table->date('tanggal');
             $table->string('dari');
             $table->string('kepada');

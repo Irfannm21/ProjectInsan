@@ -14,43 +14,45 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
-
-                        <div class="col-md-6">
-                                <input id="role" type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{ old('role') }}" required autocomplete="role" autofocus>
-
-                                @error('role')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Departement') }}</label>
-
-
+                            <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role User') }}</label>
                             <div class="col-md-6">
-                                <select name="departement" id="departement"
-                                class="custom-select col-md-5 @error('departement') is-invalid @enderror">
-                                @foreach ($departements as $departement)
-                                @if ($departement->id == (old('departement') ?? $departement->nama ?? ''))
-                                <option value="{{ $departement->id }}" selected>{{ $departement->nama }}</option>
-                                @else
-                                <option value="{{ $departement->id }}">{{ $departement->nama }}</option>
-                                @endif
-                                @endforeach
+                                <select name="role" id="role"
+                                class="custom-select col-md-5 @error('role') is-invalid @enderror">
+                                <option value="" selected>-</option>
+                                <option value="1">Super User</option>
+                                <option value="2">User</option>
                                 </select>
-                                @error('departement')
+                             </div>
+                                @error('role')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
                             </div>
+
+                     
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Departement') }}</label>
+                            <div class="col-md-6">
+                                <select name="divisi_id" id="divisi_id"
+                                class="custom-select col-md-5 @error('divisi_id') is-invalid @enderror">
+                                <option value="" selected>-</option>
+                                <option value="kd01" >Marketing</option>
+                                <option value="kd02">Accounting</option>
+                                <option value="kd03">Logistik</option>
+                                <option value="kd04">Umum & Personalia</option>
+                                <option value="kd05">Dyeing Finishing</option>
+                                <option value="kd06">Engineering</option>
+                                <option value="kd07">Weaving</option>
+                                
+                                </select>
+                             </div>
+                                @error('divisi_id')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
-
-
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
@@ -89,10 +91,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{$tombol)}}
-                                </button>
-                            </div>
+                        <div class="form-group row mt-5">
+                        <div class="col-md-6 offset-md-3">
+                            <button type="submit" class="btn btn-primary">{{$tombol}}</button>
+                        </div>
                         </div>

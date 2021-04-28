@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Wakwaw</p>
-</body>
-</html>
+@extends('home')
+@section('content')
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+            
+            <div class="pt-3 d-flex align-items-center">
+                    <h1 class="h2 mr-2">Memo Masuk {{ Auth::user()->departement }}</h1>
+            </div>
+
+            <hr>
+
+<table class="table table-striped">
+
+</table>
+        </div>
+    </div>
+</div>
+
+@endsection

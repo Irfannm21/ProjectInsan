@@ -44,7 +44,6 @@ class MemoController extends Controller
      */
     public function store(Request $request)
     {
-
         DB::beginTransaction();
 
         try{
@@ -56,22 +55,22 @@ class MemoController extends Controller
                 'perihal' => 'required',
                 'content' => 'required',
             ]);
-    
-            
+                  
             $memos = Memo::create($validateData);
-
+            
             $memoMasuk = new MemoMasuk();
             $memoMasuk->memo_id = $request->nomor;
             $memoMasuk->content = $request->content;
-            $memoMasuk->save();
-            
-            DB::commit();
 
+            $memoMasuk->save();
+         
+            DB::commit();
             Alert::success("Berhasil','Memo dengan nomor $request->nomor berhasil ditambahkan");
             return redirect('/memos');
         } catch (\Exception $e) {
            DB::rollback();
             return redirect('/memos');
+            Alert::warning("gagal','Memo dengan nomor $request->nomor gagal ditambahkan");
         }
     }
 

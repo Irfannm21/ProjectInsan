@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MemoMasuk;
 use Illuminate\Http\Request;
 
+
 class MemoMasukController extends Controller
 {
     /**
@@ -14,7 +15,10 @@ class MemoMasukController extends Controller
      */
     public function index()
     {
-        return view('masuk.table');
+        $masuks = MemoMasuk::select('SELECT MemoMasuk.memo_id as masuk_id,
+                                    memo.nomor as memo_id,   
+                                    FROM MemoMasuk, memo WHERE MemoMasuk.memo_id = memo.nomor_id ');
+        return view('masuk.table',['masuks' => $masuks]);
     }
 
     /**
