@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMemoMasuksTable extends Migration
+class CreateJenisKainsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateMemoMasuksTable extends Migration
      */
     public function up()
     {
-        Schema::create('memo_masuks', function (Blueprint $table) {
+        Schema::create('jenis_kains', function (Blueprint $table) {
             $table->id();
-            $table->string('memo_id')->references('nomor')->from('user');
-            $table->string('content');
+            $table->string('kain_id')->unique();
+            $table->staring('notasi');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateMemoMasuksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('memo_masuks');
+        Schema::dropIfExists('jenis_kains');
     }
 }
