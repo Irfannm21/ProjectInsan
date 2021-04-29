@@ -16,11 +16,12 @@ class CreateMutasiKainsTable extends Migration
         Schema::create('mutasi_kains', function (Blueprint $table) {
             $table->id();
             $table->string('mutasi_id')->unique();
-            $table->int('jenis_transaksi');
+            $table->integer('jenis_transaksi');
             $table->date('tanggal');
             $table->string('kain_id');
-            $table->bigInt('jumlah');
-            $table->int('pcs');
+            $table->string('grade');
+            $table->integer('jumlah');
+            $table->integer('pcs');
             $table->string('keterangan');
             $table->timestamps();
         });

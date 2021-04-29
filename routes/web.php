@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BarcodeController;
 use App\Http\Controllers\MemoController;
 use App\Http\Controllers\MemoMasukController;
+use App\Http\Controllers\JenisKainController;
+use App\Http\Controllers\MutasiKainController;
 use Carbon\Carbon;
 
 
@@ -27,7 +29,8 @@ Route::get('/', function () {
 Route::resource('barcodes',BarcodeController::class);
 Route::resource('memos',MemoController::class);
 Route::resource('masuks',MemoMasukController::class);
-
+Route::resource('items',JenisKainController::class);
+Route::resource('mutasi',MutasiKainController::class);
 
 Auth::routes();
 

@@ -46,7 +46,7 @@
             <a href="#" class="nav-link">
             <i class="nav-icon fas fa-file-invoice-dollar"></i>
               <p>
-                Order GGG Warehouse 
+                Order Warehouse 
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -82,7 +82,42 @@
                 </a>
               </li>
           </li>
+          </ul>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-archive"></i>
+              <p>
+                Stock Grei
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('memos.index')}}" class="nav-link">
+                  <i class="fas fa-archive nav-icon"></i>
+                  <p>Stock Grei</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('memos.index')}}" class="nav-link">
+                  <i class="fas fa-archive nav-icon"></i>
+                  <p>Tambah Item</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{route('masuks.index')}}" class="nav-link">
+                  <i class="fas fa-archive nav-icon"></i>
+                  <p>Transfer Kain</p>
+                </a>
+              </li>
+          </li>
+          </ul>
+
         </ul>
+
       </nav>
       <!-- /.sidebar-menu -->
     </div>

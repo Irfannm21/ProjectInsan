@@ -16,7 +16,7 @@ class CreateJenisKainsTable extends Migration
         Schema::create('jenis_kains', function (Blueprint $table) {
             $table->id();
             $table->string('kain_id')->unique();
-            $table->staring('notasi');
+            $table->string('notasi');
             $table->string('keterangan');
             $table->timestamps();
         });

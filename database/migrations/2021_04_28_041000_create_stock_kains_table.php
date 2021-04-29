@@ -15,8 +15,11 @@ class CreateStockKainsTable extends Migration
     {
         Schema::create('stock_kains', function (Blueprint $table) {
             $table->id();
-            $table->string('kain_id');
-            $table->bigInt('jumlah');
+            $table->string('kain_id')->references('id')->on('jenis_kains');
+            $table->string('mutasi_id')->references('id')->on('mutasi_kains');
+            $table->string('grade');
+            $table->integer('jumlah');
+            $table->integer('pcs');
             $table->timestamps();
         });
     }
