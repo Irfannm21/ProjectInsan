@@ -9,6 +9,8 @@ class Divisi extends Model
 {
     use HasFactory;
 
+    protected $fillable = ["divisi_id","nama"];
+
     public function Memo()
     {
         return $this->hasMany('App/Models/Memo');

@@ -1,5 +1,3 @@
-@csrf
-
 <div class="form-group row">
   <label for="nomor" class="col-md-3 col-form-label text-md-right"
   title="gg_po">
@@ -100,11 +98,11 @@
     <textarea id="mytextarea"
     class="@error('content') is-invalid @enderror"
     name="content"> 
-    <div class="container">
-
-
-
-    {{ old('content') ?? $memo->content ?? '' }}</textarea>
+  
+    {{ old('content') ?? $memo->content ?? '' }}
+    
+    </textarea>
+    
     @error('content')
       <span class="invalid-feedback" role="alert">
         <strong>{{ $message }}</strong>
@@ -121,6 +119,7 @@
   value="{{ old('url_asal') ?? url()->previous()}}">
 @endisset
 
+ 
 <div class="form-group row mt-5">
   <div class="col-md-6 offset-md-3">
     <button type="submit" class="btn btn-primary">{{$tombol}}</button>

@@ -7,9 +7,8 @@ use App\Http\Controllers\MemoController;
 use App\Http\Controllers\MemoMasukController;
 use App\Http\Controllers\JenisKainController;
 use App\Http\Controllers\MutasiKainController;
+use App\Http\Controllers\StockKainController;
 use Carbon\Carbon;
-
-
 use Faker\Factory as Faker;
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +28,9 @@ Route::get('/', function () {
 Route::resource('barcodes',BarcodeController::class);
 Route::resource('memos',MemoController::class);
 Route::resource('masuks',MemoMasukController::class);
-Route::resource('items',JenisKainController::class);
-Route::resource('mutasi',MutasiKainController::class);
+Route::resource('types',JenisKainController::class);    
+Route::resource('mutasis',MutasiKainController::class);
+Route::resource('stocks',StockKainController::class);
 
 Auth::routes();
 
@@ -40,5 +40,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/print/{barcode}',[BarcodeController::class,"print"])->name('print');
 Route::get('/cetak/{memo}',[MemoController::class,"cetak"])->name('cetak');
 Route::get('/test',function(){
- 
+    
 });

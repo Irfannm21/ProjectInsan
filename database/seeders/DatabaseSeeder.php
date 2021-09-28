@@ -12,5 +12,7 @@ class DatabaseSeeder extends Seeder
         $faker->seed(123);
 
         $this->call(BarcodeSeeder::class);
+        $this->call(AnggotaSeeder::class);
+        
     }
 }

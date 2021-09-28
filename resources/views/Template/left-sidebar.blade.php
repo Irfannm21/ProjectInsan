@@ -14,8 +14,8 @@
         <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-          <img src="img/user.png" class="img-circle elevation-2" alt="UserImage">
+            <a href="#" class="nav-link"> 
+          <img src="img/user.png" class="img-circle elevation-2" alt="img">
           <p> {{ Auth::user()->name }}</p>
             </a>
             <ul class="nav nav-treeview">
@@ -70,9 +70,15 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('memos.index')}}" class="nav-link">
+                <a href="{{route('memos.create')}}" class="nav-link">
                   <i class="fas fa-envelope nav-icon"></i>
                   <p>Buat Memo</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('memos.index')}}" class="nav-link">
+                  <i class="fas fa-envelope nav-icon"></i>
+                  <p>Memo Terkirim</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -92,23 +98,24 @@
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('memos.index')}}" class="nav-link">
+                <a href="{{route('stocks.index')}}" class="nav-link">
                   <i class="fas fa-archive nav-icon"></i>
                   <p>Stock Grei</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="{{route('memos.index')}}" class="nav-link">
+                <a href="{{route('types.index')}}" class="nav-link">
                   <i class="fas fa-archive nav-icon"></i>
                   <p>Tambah Item</p>
                 </a>
               </li>
 
               <li class="nav-item">
-                <a href="{{route('masuks.index')}}" class="nav-link">
+                <a href="{{route('mutasis.create')}}" class="nav-link">
                   <i class="fas fa-archive nav-icon"></i>
                   <p>Transfer Kain</p>
                 </a>

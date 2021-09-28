@@ -3,7 +3,7 @@
 <script src="{{ asset('/AdminLte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/AdminLte/dist/js/adminlte.min.js') }}"></script>
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
       selector: '#mytextarea',
@@ -14,6 +14,18 @@
       placeholder : ' texttttttttt',
 
     });
-  </script>
+  </script> -->
+
+  <!-- Luckysheet JsSpreadsheet -->
+  <script>
+    $(function () {
+        //Configuration item
+        var options = {
+            container: 'luckysheet' //luckysheet is the container id
+        }
+        luckysheet.create(options)
+    })
+</script>
+
 </body>
 </html>

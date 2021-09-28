@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\JenisKain;
+use App\Models\JenisKain as Type;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use App\Models\MutasiKain;
+use App\Models\StockKain;
 
 class JenisKainController extends Controller
 {
@@ -14,7 +17,8 @@ class JenisKainController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::orderBy('id','DESC')->paginate(10);
+        return view('jenisKain.table',['types' => $types]);
     }
 
     /**
@@ -24,7 +28,7 @@ class JenisKainController extends Controller
      */
     public function create()
     {
-        //
+        return view ('jenisKain.create');
     }
 
     /**
@@ -33,9 +37,17 @@ class JenisKainController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) 
     {
-        //
+        $validateData = $request->validate([
+            'kain_id'    => 'required',
+            'notasi'     => 'max:50',
+            'keterangan' => 'max:255',
+        ]);
+        
+        JenisKain::create($validateData);
+        Alert::success('Berhasil',"Jenis Kain $request->kain_id berhasil ditambahkan");
+       return redirect('/types');
     }
 
     /**
@@ -46,7 +58,7 @@ class JenisKainController extends Controller
      */
     public function show(JenisKain $jenisKain)
     {
-        //
+        return view('types.table',compact('types'));
     }
 
     /**
@@ -55,9 +67,9 @@ class JenisKainController extends Controller
      * @param  \App\Models\JenisKain  $jenisKain
      * @return \Illuminate\Http\Response
      */
-    public function edit(JenisKain $jenisKain)
+    public function edit(Type $type)
     {
-        //
+        return dd($types);
     }
 
     /**
@@ -69,7 +81,7 @@ class JenisKainController extends Controller
      */
     public function update(Request $request, JenisKain $jenisKain)
     {
-        //
+        return "Test 01 ";
     }
 
     /**
@@ -78,8 +90,10 @@ class JenisKainController extends Controller
      * @param  \App\Models\JenisKain  $jenisKain
      * @return \Illuminate\Http\Response
      */
-    public function destroy(JenisKain $jenisKain)
+    public function destroy(Type $Type)
     {
-        //
+        $types->delete();
+        Alert::success('Berhasil',"Jenis Kain $Type->id berhasil dihapus");
+        return redirect('/types');
     }
 }

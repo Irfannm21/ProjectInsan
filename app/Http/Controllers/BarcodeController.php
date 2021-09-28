@@ -34,7 +34,9 @@ class BarcodeController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     *
+     * BLURRR
+     * ROAD REDEMTION
+     * LEGO MOVIE 2 VIDEOGAME
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -87,7 +89,6 @@ class BarcodeController extends Controller
      */
     public function edit(Barcode $barcode)
     {
-        
         $barcodes = Barcode::orderBy('part_number')->get();
         return view ('barcode.edit',['barcode' => $barcode]);
     }

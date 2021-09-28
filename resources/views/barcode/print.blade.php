@@ -139,7 +139,7 @@
             </div>
          </td>
     </tr>
-    <tr>
+    <tr>    
         <td class="b">GG PO No:
         <br>
             <div class="isi">
@@ -152,9 +152,7 @@
         <td class="b" colspan="2" >Note :</td>
     </tr>
     </table>
-
-
-
+    
 </body>
 </div>
 </html>
