@@ -3,81 +3,57 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pinjaman;
+use App\Models\Anggota;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class PinjamanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        return "TEST";
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+       $anggotas =  Anggota::orderBy('nik')->get();
+       return view('koperasi.form_pinjaman',compact('anggotas'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $valdiateData = $request->validate([
+            'nik'               => 'required|aplha_num|size:4|unique:anggotas,nik',
+            'jenis_pinjaman'    => 'required|unique:jenisJenisTransaksis:id',
+            'tanggal'           => 'required',
+            'jumlah_pinjaman'   => 'required|alpha_num',
+            'angsuran'          => 'required|alpha_num',
+            "bayar"             => 'required|alpha_num',
+        ]);
+
+        Pinjaman::create($valdiateData);
+        Alert::success('Berhasil','Pinjaman Berhasil dibuat');
+        return redirect($request->url_asal);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Pinjaman  $pinjaman
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Pinjaman $pinjaman)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Pinjaman  $pinjaman
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Pinjaman $pinjaman)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pinjaman  $pinjaman
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Pinjaman $pinjaman)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Pinjaman  $pinjaman
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Pinjaman $pinjaman)
     {
         //

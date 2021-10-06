@@ -9,5 +9,11 @@ class Anggota extends Model
 {
     use HasFactory;
     protected $fillable = ["nik","nama","saldo"];
+
+    public function pinjaman()
+    {
+        return $this->hasMany('App\Models\Pinjaman');
+    }
+
     
 }

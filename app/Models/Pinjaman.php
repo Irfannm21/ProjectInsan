@@ -10,4 +10,9 @@ class Pinjaman extends Model
     use HasFactory;
 
     protected $fillable = ["nik","jenis_pinjaman","tanggal","jumlah_pinjaman","angsuran","bayar"];
+
+        public function anggota()
+        {
+            return $this->belongsTo('App\Models\Pinjaman');
+        }
 }

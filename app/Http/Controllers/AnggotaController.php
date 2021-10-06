@@ -14,8 +14,9 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $anggotas = Anggota::orderBy('nik')->paginate(10);
+        return view('koperasi.anggota',['anggotas' => $anggotas]);
+    }   
 
     /**
      * Show the form for creating a new resource.

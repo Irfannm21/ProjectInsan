@@ -92,34 +92,37 @@
 
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-archive"></i>
+              <i class="nav-icon fas fa-money"></i>
               <p>
-                Stock Grei
+                Koperasi
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
 
+          
             <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+                <a href="{{route('anggotas.index')}}" class="nav-link">
+                  <i class="fas fa-user nav-icon"></i>
+                  <p>Anggota Koperasi</p>
+                </a>
+              </li>
+
               <li class="nav-item">
-                <a href="{{route('stocks.index')}}" class="nav-link">
-                  <i class="fas fa-archive nav-icon"></i>
-                  <p>Stock Grei</p>
+                <a href="{{route('pinjamans.create')}}" class="nav-link">
+                  <i class="fas fa-money nav-icon"></i>
+                  <p>Pinjaman Koperasi</p>
                 </a>
               </li>
 
               <li class="nav-item">
                 <a href="{{route('types.index')}}" class="nav-link">
-                  <i class="fas fa-archive nav-icon"></i>
-                  <p>Tambah Item</p>
+                  <i class="fas fa-money nav-icon"></i>
+                  <p>Bayar Koperasi</p>
                 </a>
               </li>
 
-              <li class="nav-item">
-                <a href="{{route('mutasis.create')}}" class="nav-link">
-                  <i class="fas fa-archive nav-icon"></i>
-                  <p>Transfer Kain</p>
-                </a>
-              </li>
           </li>
           </ul>
 

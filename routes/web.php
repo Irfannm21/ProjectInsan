@@ -8,6 +8,8 @@ use App\Http\Controllers\MemoMasukController;
 use App\Http\Controllers\JenisKainController;
 use App\Http\Controllers\MutasiKainController;
 use App\Http\Controllers\StockKainController;
+use App\Http\Controllers\PinjamanController;
+use App\Http\Controllers\AnggotaController;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 /*
@@ -30,7 +32,8 @@ Route::resource('memos',MemoController::class);
 Route::resource('masuks',MemoMasukController::class);
 Route::resource('types',JenisKainController::class);    
 Route::resource('mutasis',MutasiKainController::class);
-Route::resource('stocks',StockKainController::class);
+Route::resource('pinjamans',PinjamanController::class);
+Route::resource('anggotas',AnggotaController::class);
 
 Auth::routes();
 
