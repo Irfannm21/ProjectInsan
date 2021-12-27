@@ -70,7 +70,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('memos.create')}}" class="nav-link">
+                <a href="{{route('memos.index')}}" class="nav-link">
                   <i class="fas fa-envelope nav-icon"></i>
                   <p>Buat Memo</p>
                 </a>
@@ -110,7 +110,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="{{route('pinjamans.create')}}" class="nav-link">
+                <a href="{{route('pinjamans.index')}}" class="nav-link">
                   <i class="fas fa-money nav-icon"></i>
                   <p>Pinjaman Koperasi</p>
                 </a>

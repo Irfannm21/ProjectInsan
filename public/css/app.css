@@ -61,11 +61,38 @@ body {
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: #fff;
+  background-color: ;
 }
 
-[tabindex="-1"]:focus:not(:focus-visible) {
-  outline: 0 !important;
+circle-img {
+  min-width: 250px;
+  min-height: 250px;
+  max-width: 250px;
+  max-height: 250px;
+}
+
+/* NAVBAR */
+#main-navbar a {
+  border-bottom: 5px solid #f8f9fa;
+  text-transform: uppercase;
+}
+
+#main-navbar a:hover, #main-navbar .active {
+  border-bottom-color: black;
+  transition: border-color 500em;
+}
+
+#main-slide .carousel-item{
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 90vh;
+  background-attachment: fixed;
+}
+
+/* SMOOTH SCROLLING */
+html {
+  scroll-behavior: smooth;
 }
 
 hr {
@@ -82,7 +109,45 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  color : black;
+  size: 14px;
 }
+
+
+/*  MAIN SLIDER - Halaman Home  */
+
+#main-navbar{
+  z-index: 1;  /* Agar logo tidak tertutup slider */
+}
+
+#main-slide .carousel-item{
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 90vh;
+  background-attachment: fixed;
+}
+
+#main-slide h1 {
+  margin-top: 50vh;   /* Posisikan teks di tengah slider */
+}
+
+#slide1{
+  background-image: url('/img/carousel/Front.jpg');
+}
+
+#slide2{
+  background-image: url('/img/carousel/WV1.JPG');
+}
+
+#slide3{
+  background-image: url('/img/carousel/sp1.JPG');
+}
+
+#slide4{
+  background-image: url('/img/carousel/sp2.JPG');
+}
+
 
 abbr[title],
 abbr[data-original-title] {

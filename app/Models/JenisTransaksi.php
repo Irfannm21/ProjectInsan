@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class JenisTransaksi extends Model
 {
     use HasFactory;
+    protected $fillable = ["keterangan"];
 
-    protected $fillable = ["jenis","keterangan"];
+    public function pinjaman(){
+        return $this->hasMany('App\Models\Pinjaman');
+    }
+    
 }

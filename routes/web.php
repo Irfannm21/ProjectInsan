@@ -10,6 +10,7 @@ use App\Http\Controllers\MutasiKainController;
 use App\Http\Controllers\StockKainController;
 use App\Http\Controllers\PinjamanController;
 use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\JenisTransaksiController;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 /*
@@ -34,6 +35,7 @@ Route::resource('types',JenisKainController::class);
 Route::resource('mutasis',MutasiKainController::class);
 Route::resource('pinjamans',PinjamanController::class);
 Route::resource('anggotas',AnggotaController::class);
+Route::resource('transaksis',JenisTransaksiController::class);
 
 Auth::routes();
 
@@ -43,5 +45,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/print/{barcode}',[BarcodeController::class,"print"])->name('print');
 Route::get('/cetak/{memo}',[MemoController::class,"cetak"])->name('cetak');
 Route::get('/test',function(){
-    
+
 });

@@ -3,15 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anggota;
+use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Http\Request;
 
 class AnggotaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $anggotas = Anggota::orderBy('nik')->paginate(10);
