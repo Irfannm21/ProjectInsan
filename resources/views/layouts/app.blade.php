@@ -7,9 +7,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Insansandang Internusa</title>
   <link rel="icon" href="img/favicon.png" type="image/png">
-  <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
-  <!-- Styles -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css"rel="stylesheet">
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -203,7 +201,7 @@
       <div class="container">
         <div class="row">
           <div class="col text-center">
-            <h1 class="display-4">About Us</h1>
+            <h1 class="display-4">About</h1>
             <hr class="w-25" style="color:white;"> 
             <img class="img-fluid mb-3" src="/img/Taman.png">
             <br>
@@ -254,7 +252,7 @@ For us, quality is always our primary concern.
       <div class="container">
         <div class="row">
           <div class="col text-center" >
-            <h1>Address & Contact Us</h1>
+            <h1>Address & Contact</h1>
             <hr class="w-25">
           </div>
         </div>
@@ -281,7 +279,7 @@ For us, quality is always our primary concern.
           
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Contact & Social Media</h5>
+              <h5 class="card-title">Contact</h5>
                 <p class="card-text">Weaving & Dyeing Finishing</p>
                 <hr>
                 <ul class="fa-ul text-left">
@@ -313,6 +311,7 @@ For us, quality is always our primary concern.
                     <span class="fa-li"><i class="fas fa-envelope fa-fw"></i>
                     </span>marketing.spinning@insansandang.com
                   </li>
+                  </li>
                 </ul>
                 <p class="card-text">REPRESENTATIVE OFFICE - JAKARTA PT. BUANA MAKMUR MAJU ABADI</p>
                 <hr>
@@ -337,7 +336,30 @@ For us, quality is always our primary concern.
 
       </div>
     </section>
-    
+    <!-- FOOTER -->
+    <footer id="main-footer" class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row mt-3 mt-md-0">
+          <div class="col-md-3 mr-md-auto text-center text-md-left">
+            <small>&copy; INSANSANDANG INTERNUSA 2021</small>
+          </div>
+          <div class="col-md-3 text-center text-md-left">
+            <div>
+              <a target="_blank" href="https://www.facebook.com/PTINSAN-SANDANG-INTER-NUSA-600782533371984" class="text-white mr-2">
+                <i class="fab fa-facebook fa-lg"></i>
+              </a>
+              <a target="_blank" href="https://twitter.com/Insansandang" class="text-white mr-2">
+                <i class="fab fa-twitter fa-lg"></i>
+              </a>
+              <a target="_blank" href="https://www.instagram.com/pt.insansandang/" class="text-white mr-2">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </footer>
 
 @include('sweetalert::alert')
         <script src="{{ asset('js/jquery.3.3.1.js') }}"></script>
