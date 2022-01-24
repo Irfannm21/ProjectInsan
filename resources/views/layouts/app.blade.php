@@ -47,6 +47,10 @@
         <a class="nav-link p-3" href="#contact">
             Contact </a>
         </li>
+        <li class="nav-item ">
+        <a class="nav-link p-3" href="{{'/login'}}">
+            Login </a>
+        </li>
         </ul>
         </div>
       </div>

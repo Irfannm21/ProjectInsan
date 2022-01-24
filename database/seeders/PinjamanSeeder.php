@@ -13,6 +13,6 @@ class PinjamanSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Pinjaman::factory()->count(5)->create();
     }
 }

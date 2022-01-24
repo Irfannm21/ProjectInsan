@@ -13,6 +13,8 @@ use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\JenisTransaksiController;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
+
+use App\Models\Pinjaman;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,5 +47,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/print/{barcode}',[BarcodeController::class,"print"])->name('print');
 Route::get('/cetak/{memo}',[MemoController::class,"cetak"])->name('cetak');
 Route::get('/test',function(){
-
+    $pinjaman = new Pinjaman;
+    $pinjaman->anggota_id       = "1";
+    $pinjaman->jenis_transaksi  = "pinjam";
+    $pinjaman->tanggal          = today();
+    $pinjaman->jumlah_pinjaman  = 10000000;
+    $pinjaman->angsuran         = 18;
+    $pinjaman->bayar            = 670000;
+    $pinjaman->save();
+    return "Berhasil ditambahkan";
 });

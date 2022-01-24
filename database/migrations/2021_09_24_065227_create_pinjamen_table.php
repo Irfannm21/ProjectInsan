@@ -15,14 +15,13 @@ class CreatePinjamenTable extends Migration
     {
         Schema::create('pinjamen', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('nik')->unique();
-            $table->foreign('nik')->references('nik')->on('anggotas')->onDelete('cascade');
-            $table->unsignedBigInteger('jenis_pinjaman')->unique();
-            $table->foreign('jenis_pinjaman')->references('id')->on('jenis_transaksis');
+            $table->unsignedBigInteger('anggota_id')->unique();
+            $table->foreign('anggota_id')->references('id')->on('anggotas');
+            $table->string('jenis_transaksi');
             $table->date('tanggal');
-            $table->integer('jumlah_pinjaman');
-            $table->integer('angsuran');
-            $table->integer('bayar');
+            $table->BigInteger('jumlah_pinjaman');
+            $table->BigInteger('angsuran');
+            $table->BigInteger('bayar');
             $table->timestamps();    
         });
     }

@@ -11,7 +11,7 @@ class CreateAnggotasTable extends Migration
     {
         Schema::create('anggotas', function (Blueprint $table) {
             $table->id();
-            $table->char('nik',8)->unique();
+            $table->char('nik',4)->unique();
             $table->string('nama');
             $table->bigInteger('saldo');
             $table->timestamps();
