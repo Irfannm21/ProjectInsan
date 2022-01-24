@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(BarcodeSeeder::class);
         $this->call(AnggotaSeeder::class);
-        
+        $this->call(PinjamanSeeder::class);
     }
 }
