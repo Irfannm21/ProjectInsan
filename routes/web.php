@@ -25,10 +25,17 @@ use App\Models\Pinjaman;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('layouts.app');
+// Route::get('/', function () {
+//     return view('Template.company');
+// });
+
+Route::get('/', function(){
+    return view('Template.master');
 });
 
+Route::get('/register', function (){
+    return view('auth.register');
+})->name("login");
 
 Route::resource('barcodes',BarcodeController::class);
 Route::resource('memos',MemoController::class);
@@ -43,17 +50,14 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::get('/print/{barcode}',[BarcodeController::class,"print"])->name('print');
 Route::get('/cetak/{memo}',[MemoController::class,"cetak"])->name('cetak');
 Route::get('/test',function(){
-    $pinjaman = new Pinjaman;
-    $pinjaman->anggota_id       = "1";
-    $pinjaman->jenis_transaksi  = "pinjam";
-    $pinjaman->tanggal          = today();
-    $pinjaman->jumlah_pinjaman  = 10000000;
-    $pinjaman->angsuran         = 18;
-    $pinjaman->bayar            = 670000;
-    $pinjaman->save();
-    return "Berhasil ditambahkan";
+
+
+   for($i=1; $i < 10; $i++){
+    echo "<a href='#'>$i</a>";
+   };
+
+
 });

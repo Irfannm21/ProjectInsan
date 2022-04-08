@@ -71,15 +71,29 @@ circle-img {
   max-height: 250px;
 }
 
-/* NAVBAR */
-#main-navbar a {
-  border-bottom: 5px solid #f8f9fa;
-  text-transform: uppercase;
+#showcase {
+  background-image: url('img/pd/1.jpg');
+  background-position-x: -120px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
 }
 
-#main-navbar a:hover, #main-navbar .active {
-  border-bottom-color: black;
-  transition: border-color 500em;
+
+#showcase .dark-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  min-height: 600px;
+  margin-top: -25px;
+  
+}
+
+#showcase , h1 {
+  padding-top: 50px;
+}
+
+/* NAVBAR */
+#main-navbar a {
+  text-transform: uppercase;
 }
 
 #main-slide .carousel-item{
@@ -106,12 +120,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  color : black;
-  size: 14px;
-}
 
 
 /*  MAIN SLIDER - Halaman Home  */

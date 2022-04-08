@@ -1,17 +1,13 @@
-@extends('home')
+@extends('Template.master')
 @section('content')
 <section class="content">
 <div class="card">
 <div class="card-body">
 <div class="pt-3 d-flex align-items-center">
   <h1 class="h2 mr-4">Data GGG PO Number</h1>
-            @auth 
-            <td>
-                <a href="{{route('barcodes.index')}}" class="fas fa-paperclip mr-1" title="Buat Order">Tambah Order</a>
-                <a href="{{route('print',['barcode' => $barcode->id])}}" class="fa fa-print" title="Edit Barcode">Print</a>
-                </form>
-            </td>
-            @endauth
+             <a href="{{route('barcodes.index')}}" class="fas fa-paperclip mr-1" title="Buat Order">Tambah Order</a>
+            <a href="{{route('print',['barcode' => $barcode->id])}}" class="fa fa-print" title="Edit Barcode">Print</a>
+
 </div>
 <hr>    
 

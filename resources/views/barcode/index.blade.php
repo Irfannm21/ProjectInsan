@@ -1,17 +1,16 @@
-@extends('home')
+@extends('Template.master')
 @section('content')
 <section class="content">
 <div class="card">
 <div class="card-body">
 
 <div class="pt-3 d-flex align-items-center">
-  <h1 class="h2 mr-2">Data GGG PO Number</h1>
-            @auth 
+  <h1 class="h2 mr-2">Data GGG PO Number</h1> 
             <td>
                 <a href="{{route('barcodes.create')}}" class="fas fa-paperclip mr-1" title="Buat Order">New Order</a>
                 </form>
             </td>
-            @endauth
+
 </div>
 <hr>
 

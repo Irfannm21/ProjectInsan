@@ -48,7 +48,7 @@
             Contact </a>
         </li>
         <li class="nav-item ">
-        <a class="nav-link p-3" href="{{'/login'}}">
+        <a class="nav-link p-3" href="{{route('login')}}">
             Login </a>
         </li>
         </ul>
@@ -56,50 +56,45 @@
       </div>
     </nav>
 
-    <!-- SLIDER -->
-<header id="main-slide">
-<div id="mySlide" class="carousel slide carousel-fade" data-ride="carousel">
+      <!-- SLIDER -->
+    
+    <div class="carousel slide mt-1 " id="mySlide3" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#mySlide3" data-slide-to="0" class="active"></li>
+                    <li data-target="#mySlide3" data-slide-to="1"></li>
+                    <li data-target="#mySlide3" data-slide-to="2"></li>
+                    <li data-target="#mySlide3" data-slide-to="3"></li>
+                </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/img/carousel/sp1.JPG" alt="" class="d-block w-100">
+                </div>
 
-<ol class="carousel-indicators">
-  <li data-target="#mySlide" data-slide-to="0" class="active"></li>
-  <li data-target="#mySlide" data-slide-to="1"></li>
-  <li data-target="#mySlide" data-slide-to="2"></li>
-  <li data-target="#mySlide" data-slide-to="3"></li>
-</ol>
-<div class="carousel-inner text-white">
-        <div class="carousel-item active" id="slide1">
-          <div class="container">
-            <div class="d-none d-md-block">
+                <div class="carousel-item">
+                    <img src="/img/carousel/sp2.JPG" alt="" class="d-block w-100">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/img/carousel/sp3.JPG" alt="" class="d-block w-100">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="/img/carousel/Front.jpg" alt="" class="d-block w-100">
+                </div>
+
+                <a href="#mySlide3" class="carousel-control-prev" data-slide="prev">
+                    <span class="caraousel-control-prev-icon"></span>
+                    <span class="sr-only"></span>
+                </a>
+                
+                <a href="#mySlide3" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next"></span>
+                    <span class="sr-only"></span>
+                </a>
             </div>
-          </div>
         </div>
-        <div class="carousel-item" id="slide2">
-          <div class="container">
-          </div>
-        </div>
-        <div class="carousel-item" id="slide3">
-          <div class="container">
-            <div class="d-none d-md-block">
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item" id="slide4">
-          <div class="container">
-          </div>
-        </div>
-      </div>
 
-      <a class="carousel-control-prev" href="#mySlide" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#mySlide" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-        <span class="sr-only">Next</span>
-      </a>
-
-    </div>
-    </header>
+    <!-- /SLIDER -->
 
     
       <div class=""  id="facilities"> </div>
@@ -186,13 +181,46 @@
             <hr class="w-25">
           </div>
 
-        <div class="card-columns centre">
+          <div class="card-deck">
+            <div class="card">
+            <img src="/img/pd/1.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+            <h5 class="card-title">Card-Title</h5>
+            <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore itaque consequatur nobis harum odit ratione ea deserunt facilis maiores corrupti quas nesciunt, sed sapiente! Eos, nihil ad? Esse, aperiam tempora.
+            </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">.card-footer>small.text-muted</small>
+            </div>
+        </div>
 
-        <img class="card-img-top img-thumbnail rounded-circle " src="/img/pd/1.jpg" data-aos="flip-left">
-        <img class="card-img-top img-thumbnail rounded-circle" src="/img/pd/2.jpg" data-aos="flip-left">
-        <img class="card-img-top img-thumbnail rounded-circle" src="/img/pd/3.jpg" data-aos="flip-left">
-          </div>
+        <div class="card">
+            <img src="/img/pd/1.jpg" alt="" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">card-title</h5>
+                <p class="card-text">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore nulla quis amet nihil in illum mollitia maxime laboriosam esse corrupti dolorum repellat, itaque dicta impedit, suscipit ut quas eos non.
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">.card-footer>small.text-muted</small>
+            </div>
+        </div>
 
+        <div class="card">
+            <img src="/img/pd/1.jpg" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">card-title</h5>
+                <p class="card-text">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum mollitia nobis perspiciatis, quam accusantium labore cupiditate nostrum inventore aliquam cum maiores aut architecto incidunt nemo consectetur quis iure praesentium culpa?
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">.card-footer>small.text-muted</small>
+            </div>
+        </div>
+    </div>
 
         </div>
         </div>

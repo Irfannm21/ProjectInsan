@@ -1,4 +1,4 @@
-@extends('home')
+@extends('Template.master')
 @section('content')
 <div class="pt-3">
     <h1 class="h2">Edit Barcode</h1>
