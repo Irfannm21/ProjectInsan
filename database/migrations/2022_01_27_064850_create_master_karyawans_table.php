@@ -23,18 +23,16 @@ class CreateMasterKaryawansTable extends Migration
             $table->string('no_kpj');
             $table->string('no_npwp');
             $table->string('no_kk');
-            $table->string('no_inhealt');
-            $table->string('jenis_inhealt');
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
-            $table->string('jenis_kelamin');
-            $table->string('status_nikah');
+            $table->char('jenis_kelamin',2);
+            $table->string('status_perkawinan');
             $table->string('alamat');
             $table->string('alamat_baru');
             $table->string('no_telepon');
             $table->string('no_hp');
             $table->string('email');
-            $table->string('bank');
+            $table->string('nama_bank');
             $table->string('no_rekening');
             $table->string('pengupahan');
             $table->string('gol_darah');
@@ -42,10 +40,18 @@ class CreateMasterKaryawansTable extends Migration
             $table->string('departemen');
             $table->string('jabatan');
             $table->string('tmk');
+            $table->string('shift'); 
             $table->string('agama');
             $table->string('pendidikan');
             $table->string('serikat_pekerja');
             $table->string('status_pegawai');
+            $table->string('catatan');
+            $table->string('photo');
+            $table->date('tanggal_kontrak');
+            $table->date('habis_kontrak');
+            $table->string('no_vaklaring');
+            $table->string('alasan_keluar');
+            
             $table->timestamps();
         });
     }

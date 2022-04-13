@@ -275,6 +275,40 @@
           </li>
           </ul>
 
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user nav-icon"></i>
+                Absensi
+                <i class="right fas fa-angle-left"></i>
+            </a>
+
+          
+            <ul class="nav nav-treeview">
+
+            <li class="nav-item">
+                <a href="{{route('absensis.index')}}" class="nav-link">
+                  <i class="fas fa-user nav-icon"></i>
+                    Input Absensi
+                </a>
+              </li>
+
+              <!-- <li class="nav-item">index
+                <a href="{{route('absensis.index')}}" class="nav-link">
+                <i class="fas fa-book nav-icon"></i>
+                  Pinjam
+                </a> -->
+              </li>
+
+              <!-- <li class="nav-item">
+                <a href="{{route('types.index')}}" class="nav-link">
+                <i class="fas fa-book nav-icon"></i>
+                  Bayar
+                </a>
+              </li> -->
+
+          </li>
+          </ul>
+
         </ul>
 
       </nav>

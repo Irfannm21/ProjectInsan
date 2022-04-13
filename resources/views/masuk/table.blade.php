@@ -1,11 +1,11 @@
-@extends('home')
+@extends('Template.master')
 @section('content')
 <div class="content">
     <div class="card">
         <div class="card-body">
             
             <div class="pt-3 d-flex align-items-center">
-                    <h1 class="h2 mr-2">Memo Masuk {{ Auth::user()->departement }}</h1>
+                    <h1 class="h2 mr-2">Memo Masuk </h1>
             </div>
 
             <hr>

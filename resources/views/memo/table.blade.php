@@ -1,4 +1,4 @@
-@extends('home')
+@extends('Template.master')
 @section('content')
 <section class="content">
 <div class="card">

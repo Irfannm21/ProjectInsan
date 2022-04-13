@@ -11,10 +11,13 @@ use App\Http\Controllers\StockKainController;
 use App\Http\Controllers\PinjamanController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\JenisTransaksiController;
+use App\Http\Controllers\AbsensiController;
 use Carbon\Carbon;
 use Faker\Factory as Faker;
 
-use App\Models\Pinjaman;
+// test
+use App\Models\absensi;
+use App\Models\masterKaryawan;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,9 +36,9 @@ Route::get('/', function(){
     return view('Template.master');
 });
 
-Route::get('/register', function (){
-    return view('auth.register');
-})->name("login");
+// Route::get('/register', function (){
+//     return view('auth.register');
+// })->name("login");
 
 Route::resource('barcodes',BarcodeController::class);
 Route::resource('memos',MemoController::class);
@@ -45,6 +48,7 @@ Route::resource('mutasis',MutasiKainController::class);
 Route::resource('pinjamans',PinjamanController::class);
 Route::resource('anggotas',AnggotaController::class);
 Route::resource('transaksis',JenisTransaksiController::class);
+// Route::resource('absensis',absensiController::class);
 
 Auth::routes();
 
@@ -54,10 +58,5 @@ Route::get('/print/{barcode}',[BarcodeController::class,"print"])->name('print')
 Route::get('/cetak/{memo}',[MemoController::class,"cetak"])->name('cetak');
 Route::get('/test',function(){
 
-
-   for($i=1; $i < 10; $i++){
-    echo "<a href='#'>$i</a>";
-   };
-
-
+    return view('absensi.table');
 });
