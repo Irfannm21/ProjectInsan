@@ -3,77 +3,50 @@
 namespace App\Http\Controllers;
 
 use App\Models\absensi;
-use Illuminate\Http\Request;    
+use App\Models\masterKaryawan;
+use Illuminate\Http\Request;
 
 class AbsensiController extends Controller
 {
 
     public function index()
     {
-        return view('absensi.edit');
+        $result = absensi::whereBetween('tanggal',['2022-04-23','2022-05-22']   )->get();
+        return view('absensi.index',['absensis' => $result]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('absensi.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $result = masterKaryawan::where('bagian','=',$request->kode)
+        ->orderBy('nama',"asc")->get();
+
+        foreach($result as $hasil)
+        {
+            dump($hasil);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\absensi  $absensi
-     * @return \Illuminate\Http\Response
-     */
     public function show(absensi $absensi)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\absensi  $absensi
-     * @return \Illuminate\Http\Response
-     */
     public function edit(absensi $absensi)
     {
-        
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\absensi  $absensi
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, absensi $absensi)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\absensi  $absensi
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(absensi $absensi)
     {
         //
